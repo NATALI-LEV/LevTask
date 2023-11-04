@@ -1,13 +1,26 @@
 "use client";
 
-import React, { Children } from 'react'
-import GlobalStyleProvider from './GlobalStyleProvider';
+import React, { Children } from 'react';
+import {GlobalProvider} from "../context/globalProvider";
 
 interface Props{
     children : React.ReactNode;
 }
 function ContextProvider({children}: Props) {
-  return <GlobalStyleProvider>{children}</GlobalStyleProvider>
+
+    const [isReady, setIsReady] = React.useState(false);
+
+    React.useEffect(() => {
+        setTimeout(() => {setIsReady(true);
+        }, 200);
+    },[]);
+
+    if (!isReady){
+        return null;
+    }
+
+
+  return <GlobalProvider>{children}</GlobalProvider>
 }
 
-export default ContextProvider
+export default ContextProvider;

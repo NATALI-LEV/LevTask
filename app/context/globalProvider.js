@@ -15,10 +15,13 @@ export const GlobalProvider = ({ children }) => {
         }}
         >
         
-            <GlobalUpdateContext.Provider value={setGlobalState}>
+            <GlobalUpdateContext.Provider value={{}}>
                 {children}
             </GlobalUpdateContext.Provider>
         </GlobalContext.Provider>
 
     );
 };
+
+export const useGlobalState = () => useContext(GlobalContext);
+export const useGlobalUpdate = () => useContext(GlobalUpdateContext);
