@@ -11,13 +11,13 @@ const menu = [
     {
         id: 2,
         title: "important!",
-        link: "/important!",
+        link: "/important",
         icon: list
     },
     {
         id: 3,
         title: "completed!",
-        link: "/completed!",
+        link: "/completed",
         icon: check
     },
     {
