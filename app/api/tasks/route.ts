@@ -3,13 +3,14 @@ import { NextResponse } from "next/server";
 import prisma from "@/app/utils/connect";
 
 export async function POST(req: Request) {
-    try{
+try{
     const {userId}= auth();
+
     if(!userId){
     return NextResponse.json({error: "Unauthorized" , status:401});
-}
+    }
 
-    const {title, description , date , completed , important} = await req.json();
+    const { title, description, date, completed, important } = await req.json();
 
     if(!title || !description || !date){
         return NextResponse.json({error: "Missing required fields" , status:400});
@@ -27,15 +28,17 @@ export async function POST(req: Request) {
             isCompleted: completed, 
             isImportant: important,
             userId,
-        }
+        },
     });
 
+    console.log("task created", task);
+
     return NextResponse.json({task});
-    
-    } catch (error){
-        console.log("ERROR CREATING TASK: " ,error);
-        return NextResponse.json({error: "Error creating task" , status:500});
-    }
+
+    } catch (error) {
+  console.error("ERROR CREATING TASK: ", error);
+  return NextResponse.json({ error: "Error creating task", status: 500 });
+}
 }
 
 export async function GET(req: Request) {
