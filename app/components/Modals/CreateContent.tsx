@@ -69,7 +69,7 @@ function CreateContent() {
 
   return (
     <CreateContentStyled onSubmit={handleSubmit} theme={theme}>
-      <h1>Create a Task</h1>
+      <h1>Create Your Next Task!</h1>
       <div className="input-control">
         <label htmlFor="title">Title</label>
         <input
@@ -132,7 +132,7 @@ function CreateContent() {
           borderRad={"0.8rem"}
           fw={"500"}
           fs={"1.2rem"}
-          background={"rgb(0, 163, 255)"}
+          background={"rgb(0, 112, 198)"}
         />
       </div>
     </CreateContentStyled>

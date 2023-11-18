@@ -14,9 +14,12 @@ MongoDB: NoSQL database for flexible data storage and retrieval in the backend o
 
 Next.js: Framework for server-side rendering and static site generation
 
+![pic](screenshot/screenshot.png)
+
 ## Getting Started
 make sure to install all Dependencies needed.
 Run the Development Server:
 
 ```bash
 npm run dev
+
